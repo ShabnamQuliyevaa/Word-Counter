@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word-Count</title>
+    <style>
+        body {
+            background-color: #ddd;
+        }
+        #t-are {
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            
+        }
+        .word {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 50%;
+            transform: translate(-50%,50%);
+        }
+    </style>
+</head>
+<body>
+   <div class="word">
+    <textarea id="t-are" onkeyup="myFunction()"></textarea> <br>
+    <h2 id="show"></h2>
+   </div>
+    
+
+    <script>
+let word = document.getElementById("t-are");
+let show = document.getElementById("show");
+
+function myFunction(){
+let count = 0;
+let split = word.value.split(' ');
+for(let i=0; i<split.length; i++){
+    if(split[i] != ""){
+        count++
+    }
+}
+show.innerHTML=count;
+}
+    </script>
+</body>
+</html>
